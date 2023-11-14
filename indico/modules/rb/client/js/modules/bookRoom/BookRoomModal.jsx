@@ -43,6 +43,7 @@ import * as actions from './actions';
 import * as bookRoomSelectors from './selectors';
 
 import './BookRoomModal.module.scss';
+import {renderPluginComponents} from "indico/utils/plugins";
 
 function validate({usage, user, reason}, reasonRequired) {
   const errors = {};
@@ -598,10 +599,11 @@ class BookRoomModal extends React.Component {
                     <FinalRadio
                       name="usage"
                       value="someone"
-                      label={Translate.string("I'm booking it for someone else")}
+                      label={Translate.string("I'm booking it for someone else VOJTA TEST FROM BOOK ROOM MODAL 2")}
                       disabled={fprops.submitSucceeded}
                     />
                   </Form.Group>
+                  {renderPluginComponents('test_component', {})}
                   <FieldCondition when="usage" is="someone">
                     <FavoritesProvider>
                       {favoriteUsersController => (

@@ -30,6 +30,8 @@ def get_rules(plugins):
     app = make_app(testing=True, config_override={'BASE_URL': 'http://localhost/',
                                                   'SECRET_KEY': '*' * 16,
                                                   'PLUGINS': plugins})
+    print('Dumping URLs for plugins: {}'.format(', '.join(plugins)))
+    print(app.url_map)
     return dump_url_map(app.url_map)
 
 

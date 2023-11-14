@@ -1,0 +1,5 @@
+{
+  "entry": {
+    "test_component": "./test_component.js"
+  }
+}

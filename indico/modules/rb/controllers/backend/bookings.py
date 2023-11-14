@@ -320,6 +320,7 @@ class RHUpdateBooking(RHBookingBase):
             # remove the user-provided note (we fall back to the one from the existing booking below)
             args.pop('internal_note', None)
 
+        print("VOJTA TEST - RHUpdateBooking - _process")
         new_booking_data = {
             'booking_reason': args['booking_reason'],
             'internal_note': args.get('internal_note', self.booking.internal_note),

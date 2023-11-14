@@ -100,6 +100,7 @@ class IndicoForm(FlaskForm, metaclass=IndicoFormMeta):
             return bound
 
     def __init__(self, *args, **kwargs):
+        print("VOJTA TEST - IndicoForm __init__")
         csrf_enabled = kwargs.pop('csrf_enabled', None)
         if has_request_context() and get_request_user()[1] in ('oauth', 'signed_url'):
             # no csrf checks needed since oauth/token/signature auth requires a secret that's not available

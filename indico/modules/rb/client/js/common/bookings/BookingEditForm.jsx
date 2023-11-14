@@ -32,6 +32,7 @@ import {FinalTimeRangePicker} from '../../components/TimeRangePicker';
 import {FinalWeekdayRecurrencePicker} from '../../components/WeekdayRecurrencePicker';
 import {sanitizeRecurrence, getRecurrenceInfo} from '../../util';
 import {selectors as userSelectors} from '../user';
+import {renderPluginComponents} from 'indico/utils/plugins';
 
 import './BookingEditForm.module.scss';
 
@@ -332,11 +333,12 @@ class BookingEditForm extends React.Component {
               onClick={() =>
                 form.change('user', bookedByCurrentUser ? null : bookedForUser.identifier)
               }
-              label={Translate.string("I'm booking it for someone else")}
+              label={Translate.string("I'm booking it for someone else VOJTA TEST FROM BOOKING EDIT FORM")}
               disabled={submitSucceeded}
               checked={usage === 'someone'}
             />
           </Form.Group>
+          {renderPluginComponents('test_component', {})}
           <FieldCondition when="usage" is="someone">
             <FavoritesProvider>
               {favoriteUsersController => (
